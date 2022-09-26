@@ -1,0 +1,74 @@
+<form class="search-form" [formGroup]="form">
+  <div fxLayout="column">
+    <div fxLayout="row">
+      <div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Origin*</mat-label>
+          <input
+            matInput
+            placeholder="Origin"
+            type="text"
+            formControlName="origin"
+          />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="fill" class="example-full-width">
+          <mat-label>Choose Departure Date</mat-label>
+          <input
+            matInput
+            [matDatepicker]="picker"
+            formControlName="departureDate"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-checkbox
+          (change)="onOneWayChange($event)"
+          class="example-full-width"
+          formControlName="oneWay"
+          >Is One Way</mat-checkbox
+        >
+      </div>
+      <div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Duration</mat-label>
+          <input matInput placeholder="Duration" formControlName="duration" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-checkbox class="example-full-width" formControlName="nonStop"
+          >Is Nonstop</mat-checkbox
+        >
+      </div>
+      <div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Max Price</mat-label>
+          <input matInput placeholder="Max Price" formControlName="maxPrice" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-select formControlName="viewBy" class="example-full-width">
+          <mat-option *ngFor="let viewType of viewTypes" [value]="viewType">
+            {{ viewType }}
+          </mat-option>
+        </mat-select>
+      </div>
+      <div>
+        <button
+          type="submit"
+          mat-raised-button
+          color="primary"
+          (click)="search()"
+        >
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,11 @@
+<div class="fi-main">
+  <div>Welcome to Flight Inspiration Search</div>
+  <div>
+    <fi-search (onSearch)="getResults($event)"></fi-search>
+  </div>
+  <div>
+    <ng-container *ngIf="searchResults$ | async">
+      <fi-list [results]="searchResults$ | async"></fi-list>
+    </ng-container>
+  </div>
+</div>
