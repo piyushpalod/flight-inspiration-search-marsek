@@ -3,6 +3,69 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+@mixin display-flex{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+@mixin flex-grow($grow-size){
+    -webkit-flex-grow: $grow-size;
+    -moz-flex-grow: $grow-size;
+    -ms-flex-grow: $grow-size;
+    flex-grow: $grow-size;
+    -webkit-flex-grow: $grow-size;
+    -moz-flex-grow: $grow-size;
+    -ms-flex-grow: $grow-size;
+    flex-basis: 100*$grow-size;    
+}
+
+.row{
+    @include display-flex;
+    justify-content: center;
+    justify-content: center;
+}
+
+
+.col-1{
+    @include flex-grow(1);
+}
+.col-2{
+    @include flex-grow(2);
+}
+.col-3{
+    @include flex-grow(3);
+}
+.col-4{
+    @include flex-grow(4);
+}
+
+
+.mt-10{
+    margin-top: 10px;
+}
+
+.mt-20{
+    margin-top: 20px;
+}
+
+.mt-30{
+    margin-top: 30px;
+}
+
+.mt-40{
+    margin-top: 40px !important;
+}
+
+.mr-30{
+    margin-right: 30px;
+}
+
+.ml-30{
+    margin-right: 30px;
+}
 
 
 .main{

@@ -6,7 +6,7 @@
           <mat-label>Origin*</mat-label>
           <input
             matInput
-            placeholder="Origin"
+            placeholder="origin city code example MAD"
             type="text"
             formControlName="origin"
           />
@@ -30,7 +30,7 @@
       <div>
         <mat-checkbox
           (change)="onOneWayChange($event)"
-          class="example-full-width"
+          class="example-full-width text-align-left"
           formControlName="oneWay"
           >Is One Way</mat-checkbox
         >
@@ -42,7 +42,7 @@
         </mat-form-field>
       </div>
       <div>
-        <mat-checkbox class="example-full-width" formControlName="nonStop"
+        <mat-checkbox class="example-full-width text-align-left" formControlName="nonStop"
           >Is Nonstop</mat-checkbox
         >
       </div>
@@ -52,13 +52,13 @@
           <input matInput placeholder="Max Price" formControlName="maxPrice" />
         </mat-form-field>
       </div>
-      <div>
+      <!-- <div>
         <mat-select formControlName="viewBy" class="example-full-width">
           <mat-option *ngFor="let viewType of viewTypes" [value]="viewType">
             {{ viewType }}
           </mat-option>
         </mat-select>
-      </div>
+      </div> -->
       <div>
         <button
           type="submit"
