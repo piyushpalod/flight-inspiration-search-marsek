@@ -3,7 +3,7 @@
   <div>
     <fi-search (onSearch)="getResults($event)"></fi-search>
   </div>
-  <div>
+  <div class="fi-list">
     <ng-container *ngIf="searchResults$ | async">
       <fi-list [results]="searchResults$ | async"></fi-list>
     </ng-container>
